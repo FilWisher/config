@@ -30,6 +30,12 @@ inoremap <up> x<BS><up>
 inoremap <down> x<BS><down>
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
+
+"buffer shortcuts (CTRL-N next; CTRL-P prev; CTRL-D close)
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
+nnoremap <C-d> :bd<CR>
+
  
 " fuck everything about the 'Press ENTER' message:
 set showcmd
