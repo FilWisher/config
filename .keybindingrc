@@ -1,0 +1,24 @@
+## keybindings file for sxhkd ##
+
+# start applications
+super + {g,r}
+  {google-chrome-stable,st}
+
+super + shift + {t}
+  st -e {tmux}
+
+# control tmux
+control + shift + {c,t}
+  tmux {kill-pane,new-window}
+
+control + {h,l,j,k}
+  tmux select-pane -{L,R,D,U}
+  
+control + shift + {h,l}
+  tmux {previous-window,next-window}
+  
+control + alt + {h,l,j,k}
+  tmux resize-pane -{L,R,D,U}
+ 
+control + {s,S}
+  tmux {split-window -h,split-window}

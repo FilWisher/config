@@ -1,12 +1,16 @@
 "from substack
 
+let mapleader="," 
 set autoindent
-set indentexpr=off
+set indentexpr=off 
+set tabstop=2
 set expandtab
-set tabstop=4
- 
-set sw=4
-set textwidth=80
+set shiftwidth=2
+set wildmenu
+
+set wmh=0
+set number
+set sw=2
 set nohls
 set noshowmatch
 syntax enable
@@ -23,7 +27,7 @@ set noshowcmd
 set nowritebackup
 set noswapfile
 set nobackup
- 
+
 " don't delete whitespace-only lines leaving insert mode:
 inoremap <CR> x<BS><CR>x<BS>
 inoremap <up> x<BS><up>
@@ -31,16 +35,33 @@ inoremap <down> x<BS><down>
 nnoremap o ox<BS>
 nnoremap O Ox<BS>
 
-"buffer shortcuts (CTRL-N next; CTRL-P prev; CTRL-D close)
+"buffer shortcuts (CTRL-n next; CTRL-p prev; CTRL-c close)
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
-nnoremap <C-d> :bd<CR>
+nnoremap <C-c> :bp\|bd#<CR>
 
- 
+"start opening file with C-f
+nnoremap <C-f> :e<Space>
+nnoremap <Leader>f :b<Space>
+
+" ESC key
+inoremap <C-g> <C-c>
+onoremap <C-g> <C-c>
+cnoremap <C-g> <C-c>
+vnoremap <C-g> <C-c>
+
 " fuck everything about the 'Press ENTER' message:
 set showcmd
 set shortmess=at
  
 " 2-space indent for html and json files
 autocmd BufRead,BufNewFile *.json,*.html,*.css,*.svg set sw=2 tabstop=2
-autocmd BufRead,BufNewFile Makefile,makefile,*Makefile,*makefile set noexpandtab
+autocmd BufRead,BufNewFile mkfile,Makefile,makefile,*Makefile,*makefile set noexpandtab
+
+let g:vimfiler_as_default_explorer = 1
+
+set backupdir=/tmp
+set directory=/tmp
+
+" git
+nnoremap <Leader>gs :!git status<CR>
