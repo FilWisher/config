@@ -8,6 +8,8 @@ set expandtab
 set shiftwidth=2
 set wildmenu
 
+set clipboard=unnamedplus
+
 set wmh=0
 set number
 set sw=2
@@ -50,6 +52,19 @@ onoremap <C-g> <C-c>
 cnoremap <C-g> <C-c>
 vnoremap <C-g> <C-c>
 
+" swap between .c and .h
+nnoremap <Leader>n :A<CR>
+vnoremap <Leader>n :A<CR>
+
+" ctags
+nnoremap <Leader>ct :!ctags -R .<CR>
+nnoremap <leader>t  :tag 
+nnoremap <leader>tn  :tn<CR>
+nnoremap <leader>tp  :tp<CR>
+nnoremap <leader>ts  :ts<CR>
+nnoremap <leader>tf  :tf<CR>
+nnoremap <leader>tl  :tl<CR>
+
 " fuck everything about the 'Press ENTER' message:
 set showcmd
 set shortmess=at
@@ -65,3 +80,7 @@ set directory=/tmp
 
 " git
 nnoremap <Leader>gs :!git status<CR>
+
+nnoremap <Leader>k Vxkkp
+nnoremap <Leader>j Vxp
+
