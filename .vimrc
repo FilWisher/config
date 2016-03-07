@@ -23,7 +23,7 @@ autocmd VimEnter * set vb t_vb=
  
 set modeline
 set nojoinspaces " pesky 2-spaces after the period thing
-set shortmess=AITstW " I hate: naggy dialogs, intros, long messages
+set shortmess=at " I hate: naggy dialogs, intros, long messages
 set noshowcmd
  
 set nowritebackup
@@ -47,10 +47,24 @@ nnoremap <C-f> :e<Space>
 nnoremap <Leader>f :b<Space>
 
 " ESC key
-inoremap <C-g> <C-c>
-onoremap <C-g> <C-c>
-cnoremap <C-g> <C-c>
-vnoremap <C-g> <C-c>
+inoremap <C-g> <Esc>
+onoremap <C-g> <Esc>
+cnoremap <C-g> <Esc>
+vnoremap <C-g> <Esc>
+
+" split window
+vnoremap <C-w>s :vsplit<CR>
+inoremap <C-w>s :vsplit<CR>
+nnoremap <C-w>s :vsplit<CR>
+vnoremap <C-w>o :split<CR>
+inoremap <C-w>o :split<CR>
+nnoremap <C-w>o :split<CR>
+
+" switch window
+vnoremap <Tab> <C-w>l
+nnoremap <Tab> <C-w>l
+vnoremap <S-Tab> <C-w>h
+nnoremap <S-Tab> <C-w>h
 
 " swap between .c and .h
 nnoremap <Leader>n :A<CR>
@@ -58,17 +72,13 @@ vnoremap <Leader>n :A<CR>
 
 " ctags
 nnoremap <Leader>ct :!ctags -R .<CR>
-nnoremap <leader>t  :tag 
-nnoremap <leader>tn  :tn<CR>
-nnoremap <leader>tp  :tp<CR>
-nnoremap <leader>ts  :ts<CR>
-nnoremap <leader>tf  :tf<CR>
-nnoremap <leader>tl  :tl<CR>
+nnoremap <Leader>t  :tag 
+nnoremap <Leader>tn  :tn<CR>
+nnoremap <Leader>tp  :tp<CR>
+nnoremap <Leader>ts  :ts<CR>
+nnoremap <Leader>tf  :tf<CR>
+nnoremap <Leader>tl  :tl<CR>
 
-" fuck everything about the 'Press ENTER' message:
-set showcmd
-set shortmess=at
- 
 " 2-space indent for html and json files
 autocmd BufRead,BufNewFile *.json,*.html,*.css,*.svg set sw=2 tabstop=2
 autocmd BufRead,BufNewFile mkfile,Makefile,makefile,*Makefile,*makefile set noexpandtab
@@ -83,4 +93,16 @@ nnoremap <Leader>gs :!git status<CR>
 
 nnoremap <Leader>k Vxkkp
 nnoremap <Leader>j Vxp
+
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+let g:ctrlp_map = '<c-a>'
+
+filetype plugin indent on
+nnoremap <leader>e :Eval<CR>
+
+autocmd BufWinLeave * mkview!
+autocmd BufWinEnter * silent loadview
 
