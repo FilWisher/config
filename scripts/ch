@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# ch [dir] - change directory to dir.
+#   if dir not provided, ch directory
+#   to directory last ch'ed to.
+function ch() {
+
+  hist=/tmp/ch_dir
+  dir=$1
+ 
+  if [ $dir ]
+  then
+    dir=`readlink -f -- "$dir"`
+    cd $dir 2&>/dev/null
+    if [ $? ] 
+    then
+      echo "${dir}" > $hist
+    else
+      (echo "-ch: ${dir} not found" 1>&2)
+    fi
+  else
+    dir=`cat ${hist}`
+    if [ $dir ]
+    then
+      cd $dir
+    fi
+  fi
+
+}
