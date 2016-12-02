@@ -2,7 +2,7 @@
 
 # start applications
 super + o; {g,r,t}
-  {google-chrome-stable,st, st -e tmux}
+  {chromium, roxterm, roxterm -e tmux}
 
 control + super + {h,l}
   tmux {previous-window,next-window}
@@ -12,3 +12,9 @@ control + alt + {h,l,j,k}
   
 super + {y,p}
   xsel {-i,-o}
+  
+super + {F1}
+  xdotool getwindowfocus key F11
+  
+super + {d,u}
+  {dv,gt}
