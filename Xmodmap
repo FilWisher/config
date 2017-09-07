@@ -1,0 +1,6 @@
+clear lock
+clear control
+keycode 66 = Super_L
+keycode 37 = Control_L
+add control = Control_L
+add mod4 = Super_L

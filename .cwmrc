@@ -1,0 +1,34 @@
+fontname "CMU Typewriter Text:pixelsize=17"
+
+bind    M-g   vtile
+bind    M-t   htile
+
+bind CM-Return sakura
+
+bind F1 maximize
+bind F6 delete
+bind F9 rcycleingroup
+bind F10 cycleingroup
+bind F11 rcyclegroup
+bind F12 cyclegroup
+
+bind M-1 grouponly1
+bind M-2 grouponly2
+bind M-3 grouponly3
+bind M-4 grouponly4
+bind M-5 grouponly5
+bind M-6 grouponly6
+bind M-7 grouponly7
+bind M-8 grouponly8
+bind M-9 grouponly9
+
+
+bind MS-1 movetogroup1
+bind MS-2 movetogroup2
+bind MS-3 movetogroup3
+bind MS-4 movetogroup4
+bind MS-5 movetogroup5
+bind MS-6 movetogroup6
+bind MS-7 movetogroup7
+bind MS-8 movetogroup8
+bind MS-9 movetogroup9

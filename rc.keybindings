@@ -1,0 +1,17 @@
+## keybindings file for sxhkd ##
+
+# start applications
+super + o; {g,t}
+  {chromium, roxterm, roxterm}
+
+super + space
+  slock
+
+super + {d,u}
+  {dvorak,qwerty}
+  
+super + p
+    /usr/bin/dmenu_run
+    
+control + XF86WakeUp
+    xdotool click 2
